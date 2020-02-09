@@ -13,7 +13,6 @@ have more time to have `fun`.
         
 
 3. 启动activity 
- 
    start<DemoActivity>
     
     
