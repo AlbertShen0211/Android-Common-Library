@@ -13,16 +13,14 @@ have more time to have `fun`.
         
 
 3. 启动activity 
-  
-
-  start<DemoActivity>
+     start<DemoActivity>
     
     
     
     
     
    您可以直接导入generalextensionlibrary ，或者拷贝其中文件到您的项目快速开发，
- 希望能帮到您，欢迎star！
+ 希望能帮到您！
  
  
  
