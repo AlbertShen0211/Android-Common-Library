@@ -22,9 +22,8 @@ have more time to have `fun`.
 
      1). var spValue by SharePreferenceUtil ("key", "DefaultValue")
 
-     2). Set data spValue = "value"
+     2). set data spValue = "value"
 
-     3).Get data
-           spValue
+     3). get data spValue
  
  

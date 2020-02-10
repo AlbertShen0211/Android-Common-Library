@@ -1,2 +1,2 @@
-include ':app', ':generalextensionlibrary'
+include ':app', ':commonlibrary'
 rootProject.name='Android Control Extension'
