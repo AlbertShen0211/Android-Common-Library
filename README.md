@@ -12,17 +12,19 @@ have more time to have `fun`.
         }
         
 
-3. 启动activity 
+3. 启动activity
 
    start+要启动的activity （比如 DemoActivity）
     
    >
 
-    
-    
+4. SharePreferenceUtil 用法
 
-   **您可以直接导入generalextensionlibrary
-   ，或者拷贝其中文件到您的项目快速开发， 希望能帮到您！**
- 
+     1). var spValue by SharePreferenceUtil ("key", "DefaultValue")
+
+     2). Set data spValue = "value"
+
+     3).Get data
+           spValue
  
  
