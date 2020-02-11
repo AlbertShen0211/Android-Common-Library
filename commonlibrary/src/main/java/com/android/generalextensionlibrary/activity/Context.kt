@@ -15,6 +15,9 @@ import android.os.Bundle
 inline fun <reified A : Activity> Context.start(configIntent: Intent.() -> Unit = {}) {
     startActivity(Intent(this, A::class.java).apply(configIntent))
 }
+inline fun <reified A : Activity> Activity.startActivityForResult(requestCode: Int,configIntent: Intent.() -> Unit = {}) {
+    startActivityForResult(Intent(this, A::class.java).apply(configIntent),requestCode)
+}
 
 /**
  * Starts an Activity that supports the passed [action], in a more concise way,
@@ -29,20 +32,4 @@ inline fun <reified A : Activity> Context.start(configIntent: Intent.() -> Unit 
 @Throws(ActivityNotFoundException::class)
 inline fun Context.startActivity(action: String, configIntent: Intent.() -> Unit = {}) {
     startActivity(Intent(action).apply(configIntent))
-}
-
-inline fun <reified T : Any> newIntent(context: Context): Intent =
-        Intent(context, T::class.java)
-
-inline fun <reified T : Any> Activity.startActivityForResult(
-        requestCode: Int = -1,
-        options: Bundle? = null,
-        noinline init: Intent.() -> Unit = {}) {
-    val intent = newIntent<T>(this)
-    intent.init()
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-        startActivityForResult(intent, requestCode, options)
-    } else {
-        startActivityForResult(intent, requestCode)
-    }
 }

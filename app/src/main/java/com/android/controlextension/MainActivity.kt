@@ -2,6 +2,7 @@ package com.android.controlextension
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.android.generalextensionlibrary.activity.start
 import com.android.generalextensionlibrary.toast.longToast
 import com.android.generalextensionlibrary.toast.toast
