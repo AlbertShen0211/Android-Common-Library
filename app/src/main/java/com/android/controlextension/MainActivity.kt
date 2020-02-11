@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.android.generalextensionlibrary.activity.start
 import com.android.generalextensionlibrary.toast.longToast
 import com.android.generalextensionlibrary.toast.toast
-import com.android.generalextensionlibrary.view.onClick
+import com.android.generalextensionlibrary.view.click
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val b=false;
 
-        button1.onClick {
+        button1.click {
             if (b)
             toast("hello")
             else
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        button2.onClick {
+        button2.click {
             start<HelloActivity>()
         }
 

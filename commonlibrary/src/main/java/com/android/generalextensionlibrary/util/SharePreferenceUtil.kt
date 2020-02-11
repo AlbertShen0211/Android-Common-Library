@@ -9,7 +9,6 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 class SharePreferenceUtil<T>(val name: String, private val default: T) : ReadWriteProperty<Any?, T> {
-
     private val prefs: SharedPreferences by lazy {
         getDefaultSharedPreferences(appCtx)
         // App.CONTEXT.getSharedPreferences("ss",Context.MODE_PRIVATE)

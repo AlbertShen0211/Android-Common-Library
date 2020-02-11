@@ -25,5 +25,17 @@ have more time to have `fun`.
      2). set data spValue = "value"
 
      3). get data spValue
+
+
+
+ 5. NetworkUtil 用法
+
+    1). isNetworkAvailable(context)
+
+    2). isConnected(context)
+
+    3). getNetworkType(context)
+
+
  
  

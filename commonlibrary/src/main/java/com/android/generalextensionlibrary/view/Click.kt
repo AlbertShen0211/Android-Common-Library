@@ -10,7 +10,7 @@ import android.view.View
  *
  * If this View is not clickable, it becomes clickable.
  */
-inline fun View.onClick(crossinline block: () -> Unit) = setOnClickListener { block() }
+inline fun View.click(crossinline block: () -> Unit) = setOnClickListener { block() }
 
 /**
  * Register the [block] lambda as [View.OnLongClickListener] to this View.
@@ -20,7 +20,7 @@ inline fun View.onClick(crossinline block: () -> Unit) = setOnClickListener { bl
  *
  * If this view is not long clickable, it becomes long clickable.
  */
-inline fun View.onLongClick(
+inline fun View.longClick(
     consume: Boolean = true,
     crossinline block: () -> Unit
 ) = setOnLongClickListener { block(); consume }
