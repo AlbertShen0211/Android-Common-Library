@@ -1,4 +1,3 @@
-
 package com.android.generalextensionlibrary.ext
 
 import android.app.Activity
@@ -14,8 +13,11 @@ inline fun <reified A : Activity> Context.start(configIntent: Intent.() -> Unit 
     startActivity(Intent(this, A::class.java).apply(configIntent))
 }
 
-inline fun <reified A : Activity> Activity.startActivityForResult(requestCode: Int,configIntent: Intent.() -> Unit = {}) {
-    startActivityForResult(Intent(this, A::class.java).apply(configIntent),requestCode)
+inline fun <reified A : Activity> Activity.startActivityForResult(
+    requestCode: Int,
+    configIntent: Intent.() -> Unit = {}
+) {
+    startActivityForResult(Intent(this, A::class.java).apply(configIntent), requestCode)
 }
 
 /**
@@ -46,6 +48,20 @@ fun Context.px2dp(px: Int): Int {
     val scale = resources.displayMetrics.density
     return (px / scale + 0.5f).toInt()
 }
+
+/**
+ *  px--sp
+ */
+fun Context.px2sp(px: Float): Int {
+    val fontScale = resources.displayMetrics.scaledDensity
+    return (px / fontScale + 0.5f).toInt()
+}
+
+fun Context.sp2px(sp: Float): Int {
+    val fontScale = resources.displayMetrics.scaledDensity
+    return (sp * fontScale + 0.5f).toInt()
+}
+
 
 /**
  * The absolute width/height of the available display size in pixels
