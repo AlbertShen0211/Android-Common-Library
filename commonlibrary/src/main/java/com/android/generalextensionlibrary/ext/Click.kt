@@ -1,7 +1,7 @@
 
 @file:Suppress("NOTHING_TO_INLINE")
 
-package com.android.generalextensionlibrary.view
+package com.android.generalextensionlibrary.ext
 
 import android.view.View
 

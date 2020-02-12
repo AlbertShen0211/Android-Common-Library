@@ -28,13 +28,22 @@ have more time to have `fun`.
 
 
 
- 5. NetworkUtil 用法
+5. NetworkUtil 用法
 
     1). isNetworkAvailable(context)
 
     2). isConnected(context)
 
     3). getNetworkType(context)
+
+
+6.  获取屏幕宽高以及Dp/Px转化用法
+
+    1). dp2px(context) or px2dp
+
+    2). screenWidth or screenHeight
+
+
 
 
  

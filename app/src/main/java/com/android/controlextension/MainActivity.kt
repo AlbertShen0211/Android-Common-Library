@@ -2,11 +2,10 @@ package com.android.controlextension
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.android.generalextensionlibrary.activity.start
-import com.android.generalextensionlibrary.toast.longToast
-import com.android.generalextensionlibrary.toast.toast
-import com.android.generalextensionlibrary.view.click
+import com.android.generalextensionlibrary.ext.start
+import com.android.generalextensionlibrary.ext.longToast
+import com.android.generalextensionlibrary.ext.toast
+import com.android.generalextensionlibrary.ext.click
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

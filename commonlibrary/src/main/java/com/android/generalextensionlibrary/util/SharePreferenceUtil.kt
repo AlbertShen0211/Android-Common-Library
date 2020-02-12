@@ -3,7 +3,7 @@ package com.android.generalextensionlibrary.util
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.preference.PreferenceManager.getDefaultSharedPreferences
-import com.android.generalextensionlibrary.appcontext.appCtx
+import com.android.generalextensionlibrary.appCtx
 import java.io.*
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty

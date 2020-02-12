@@ -1,6 +1,6 @@
 @file:Suppress("NOTHING_TO_INLINE")
 
-package com.android.generalextensionlibrary.toast
+package com.android.generalextensionlibrary.ext
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,7 +14,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import com.android.generalextensionlibrary.appcontext.appCtx
+import com.android.generalextensionlibrary.appCtx
 import kotlin.LazyThreadSafetyMode.NONE
 
 inline fun Context.txt(@StringRes stringResId: Int): CharSequence = resources.getText(stringResId)
@@ -23,7 +23,9 @@ inline val Context.windowManager get() = getSystemService(Context.WINDOW_SERVICE
 
 @PublishedApi
 internal fun Context.createToast(text: CharSequence, duration: Int): Toast {
-    val ctx = if (SDK_INT == 25) SafeToastCtx(this) else this
+    val ctx = if (SDK_INT == 25) SafeToastCtx(
+        this
+    ) else this
     return Toast.makeText(ctx, text, duration)
 }
 
@@ -66,12 +68,17 @@ internal inline val Fragment.ctx: Context
  * Avoids [WindowManager.BadTokenException] on API 25.
  */
 private class SafeToastCtx(ctx: Context) : ContextWrapper(ctx) {
-    private val toastWindowManager by lazy(NONE) { ToastWindowManager(baseContext.windowManager) }
+    private val toastWindowManager by lazy(NONE) {
+        ToastWindowManager(
+            baseContext.windowManager
+        )
+    }
     private val toastLayoutInflater by lazy(NONE) {
         baseContext.layoutInflater.cloneInContext(this)
     }
 
-    override fun getApplicationContext(): Context = SafeToastCtx(baseContext.applicationContext)
+    override fun getApplicationContext(): Context =
+        SafeToastCtx(baseContext.applicationContext)
     override fun getSystemService(name: String): Any = when (name) {
         Context.LAYOUT_INFLATER_SERVICE -> toastLayoutInflater
         Context.WINDOW_SERVICE -> toastWindowManager

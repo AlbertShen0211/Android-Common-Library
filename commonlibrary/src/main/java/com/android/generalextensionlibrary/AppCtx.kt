@@ -1,9 +1,10 @@
-package com.android.generalextensionlibrary.appcontext
+package com.android.generalextensionlibrary
 
 import android.annotation.SuppressLint
 import android.content.Context
 
-val appCtx: Context get() = internalCtx ?: initAndGetAppCtxWithReflection()
+val appCtx: Context get() = internalCtx
+    ?: initAndGetAppCtxWithReflection()
 
 @SuppressLint("StaticFieldLeak")
 private var internalCtx: Context? = null
