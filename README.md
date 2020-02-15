@@ -45,6 +45,21 @@ have more time to have `fun`.
 
 
 
+7. RegularUtil 用法
+
+    1). 身份证是否合法 isIDCard("no")
+
+    2). 手机号是否合法 isMobile("no")
+
+    3). isEmail是否合法 isEmail("xx.mail.com")
+
+    4). 用户名校验 isUsername()
+
+    5). 格式日期校验 isDate()
+
+
+
+
 
  
  
