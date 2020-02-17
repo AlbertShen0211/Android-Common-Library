@@ -61,7 +61,7 @@ have more time to have `fun`.
 
     1). 普通字符串编码 encode(input,"")
 
-    2). 普通字符串编解码 decode(input,"")
+    2). 普通字符串解码 decode(input,"")
 
     3). base64Encode(input: String)，base64Decode(input: String?)
 
