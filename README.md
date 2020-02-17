@@ -59,6 +59,21 @@ have more time to have `fun`.
 
 
 
+8.EncodeUtil 用法
+
+    1). 普通字符串编码 encode(input，"")
+
+    2). 普通字符串编码 decode(input，"")
+
+    3). base64Encode(input: String)，base64Decode(input: String?)
+
+    4). binaryEncode(input: String)，binaryDecode(input: String)
+
+    5). htmlEncode(input: CharSequence?)，htmlDecode(input: String?)
+
+
+
+
 
 
  
