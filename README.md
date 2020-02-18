@@ -5,9 +5,9 @@ have more time to have `fun`.
 1. toast 用法
      toast("hello")
      
-2. onClick 用法
+2. click 用法
  
-    button.onClick {
+    button.click{
            // todo
         }
         
