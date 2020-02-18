@@ -1,8 +1,8 @@
 package com.android.generalextensionlibrary.util
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.SharedPreferences
-import android.preference.PreferenceManager.getDefaultSharedPreferences
 import com.android.generalextensionlibrary.appCtx
 import java.io.*
 import kotlin.properties.ReadWriteProperty
@@ -10,9 +10,7 @@ import kotlin.reflect.KProperty
 
 class SharePreferenceUtil<T>(val name: String, private val default: T) : ReadWriteProperty<Any?, T> {
     private val prefs: SharedPreferences by lazy {
-        getDefaultSharedPreferences(appCtx)
-        // App.CONTEXT.getSharedPreferences("ss",Context.MODE_PRIVATE)
-       // ContextProvider.get()!!.context.getSharedPreferences(""fileName, Context.MODE_PRIVATE)
+         appCtx.getSharedPreferences("default",Context.MODE_PRIVATE)
     }
 
     override fun getValue(thisRef: Any?, property: KProperty<*>): T {

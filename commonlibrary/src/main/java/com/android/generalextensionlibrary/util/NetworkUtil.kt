@@ -15,6 +15,7 @@ class NetworkUtil private constructor() {
     init {
         throw UnsupportedOperationException("NetworkUtils constructor not allowed to be created")
     }
+
     companion object {
         const val NETWORK_WIFI = 1 // wifi network
         const val NETWORK_4G = 4 // "4G" networks
@@ -27,9 +28,10 @@ class NetworkUtil private constructor() {
         private const val NETWORK_TYPE_IWLAN = 18
 
         fun checkNetworkState(context: Context): Boolean { //得到网络信息
-            val manager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val manager =
+                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val info = manager.activeNetworkInfo
-            return if (info != null && info.isAvailable) true  else false
+            return if (info != null && info.isAvailable) true else false
         }
 
 
@@ -201,54 +203,14 @@ class NetworkUtil private constructor() {
         }
 
         /**
-         * 获取IP地址
-         * @param useIPv4
-         * 是否用IPv4
-         * @return IP地址
-         */
-       /* fun getIPAddress(useIPv4: Boolean): String? {
-            try {
-                val nis = NetworkInterface.getNetworkInterfaces()
-                while (nis.hasMoreElements()) {
-                    val ni = nis.nextElement()
-                    // 防止小米手机返回10.0.2.15
-                    if (!ni.isUp) {
-                        continue
-                    }
-                    val addresses = ni.inetAddresses
-                    while (addresses.hasMoreElements()) {
-                        val inetAddress = addresses.nextElement()
-                        if (!inetAddress.isLoopbackAddress) {
-                            val hostAddress = inetAddress.hostAddress
-                            val isIPv4 = hostAddress.indexOf(':') < 0
-                            if (useIPv4) {
-                                if (isIPv4) return hostAddress
-                            } else {
-                                if (!isIPv4) {
-                                    val index = hostAddress.indexOf('%')
-                                    return if (index < 0) hostAddress.toUpperCase() else hostAddress.substring(
-                                        0,
-                                        index
-                                    ).toUpperCase()
-                                }
-                            }
-                        }
-                    }
-                }
-            } catch (e: SocketException) {
-                e.printStackTrace()
-            }
-            return null
-        }*/
-
-        /**
          * 检查当前网络是否可用
          *
          * @param context
          * @return
          */
         fun isNetworkAvailable(context: Context): Boolean { // 获取手机所有连接管理对象（包括对wi-fi,net等连接的管理）
-            val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val connectivityManager =
+                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             if (connectivityManager == null) {
                 return false
             } else { // 获取NetworkInfo对象
@@ -268,7 +230,8 @@ class NetworkUtil private constructor() {
          * 判断网络是否连接
          */
         fun isConnected(context: Context): Boolean {
-            val connectivity = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val connectivity =
+                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             if (null != connectivity) {
                 val info = connectivity.activeNetworkInfo
                 if (null != info && info.isConnected) {
@@ -284,20 +247,22 @@ class NetworkUtil private constructor() {
          * 判断是否是wifi连接
          */
         fun isWifi(context: Context): Boolean {
-            val connectivity = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager ?: return false
+            val connectivity =
+                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+                    ?: return false
             return connectivity.activeNetworkInfo.type == ConnectivityManager.TYPE_WIFI
         }
 
         /**
          * open setting
          */
-       /* fun openSetting(activity: Activity) {
-            val intent = Intent("/")
-            val componentName = ComponentName("com.android.settings", "com.android.settings.WirelessSettings")
-            intent.component = componentName
-            intent.action = "android.intent.action.VIEW"
-            activity.startActivityForResult(intent, 0)
-        }*/
+        /* fun openSetting(activity: Activity) {
+             val intent = Intent("/")
+             val componentName = ComponentName("com.android.settings", "com.android.settings.WirelessSettings")
+             intent.component = componentName
+             intent.action = "android.intent.action.VIEW"
+             activity.startActivityForResult(intent, 0)
+         }*/
     }
 
 }
