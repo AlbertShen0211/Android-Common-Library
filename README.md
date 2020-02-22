@@ -1,24 +1,22 @@
-These libraries are intended to reduce the amount of code you have to write, freeing code reading and writing
-time, so you can focus more on what you want to build for your users (even if you're the only one), or
-have more time to have `fun`.
-
-1. toast 用法
+  使用这个commonlibrary、减少您必须编写的代码量，从而节省代码的读写
+时间，这样您就可以将更多精力放在要为用户构建的内容上。
+**1. toast 用法**
      toast("hello")
      
-2. click 用法
+**2. click 用法**
  
     button.click{
            // todo
         }
         
 
-3. 启动activity
+**3. 启动activity**
 
    start+要启动的activity （比如 DemoActivity）
     
    >
 
-4. SharePreferenceUtil 用法
+**4. SharePreferenceUtil 用法**
 
      1). var spValue by SharePreferenceUtil ("key", "DefaultValue")
 
@@ -28,7 +26,7 @@ have more time to have `fun`.
 
 
 
-5. NetworkUtil 用法
+**5. NetworkUtil 用法**
 
     1). isNetworkAvailable(context)
 
@@ -37,7 +35,7 @@ have more time to have `fun`.
     3). getNetworkType(context)
 
 
-6.  获取屏幕宽高以及Dp/Px转化用法
+**6.  获取屏幕宽高以及Dp/Px转化用法**
 
     1). dp2px(context) or px2dp
 
@@ -45,7 +43,7 @@ have more time to have `fun`.
 
 
 
-7. RegularUtil 用法
+**7. RegularUtil 用法**
 
     1). 身份证是否合法 isIDCard("no")
 
@@ -57,7 +55,7 @@ have more time to have `fun`.
 
     5). 格式日期校验 isDate()
 
-8. EncodeUtil 用法
+**8. EncodeUtil 用法**
 
     1). 普通字符串编码 encode(input,"")
 
