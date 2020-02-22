@@ -1,7 +1,9 @@
   使用这个commonlibrary、减少您必须编写的代码量，从而节省代码的读写
 时间，这样您就可以将更多精力放在要为用户构建的内容上。
+
 **1. toast 用法**
-     toast("hello")
+    
+    toast("hello")
      
 **2. click 用法**
  
@@ -12,9 +14,9 @@
 
 **3. 启动activity**
 
-   start+要启动的activity （比如 DemoActivity）
+    start+要启动的activity （比如 DemoActivity）
     
-   >
+   
 
 **4. SharePreferenceUtil 用法**
 
