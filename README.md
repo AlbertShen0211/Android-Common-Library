@@ -1,10 +1,22 @@
-  使用这个commonlibrary、减少您必须编写的代码量，从而节省代码的读写
-时间，这样您就可以将更多精力放在要为用户构建的内容上。
+&emsp;<font color=#0000FF
+size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节省代码的读写时间，这样您就可以将更多精力放在要为用户构建的内容上。</font>
+
+&emsp;<font face="黑体" size=6>**一行代码即可引入到您的工程使用：**</font>
+
+
+&emsp;&emsp;&emsp;&emsp;<font color=#FF0000 size=5>implementation
+'com.spb:commonlibrary:1.0.0'  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;或者  
+&emsp;&emsp;&emsp;&emsp;api 'com.spb:commonlibrary:1.0.0'</font>
+
+&emsp;<font face="黑体" size=6>**常用方法介绍：**</font>
+
 
 **1. toast 用法**
-    
+
     toast("hello")
-     
+
+
 **2. click 用法**
  
     button.click{
@@ -16,7 +28,7 @@
 
     start+要启动的activity （比如 DemoActivity）
     
-   
+
 
 **4. SharePreferenceUtil 用法**
 
