@@ -253,16 +253,6 @@ class NetworkUtil private constructor() {
             return connectivity.activeNetworkInfo.type == ConnectivityManager.TYPE_WIFI
         }
 
-        /**
-         * open setting
-         */
-        /* fun openSetting(activity: Activity) {
-             val intent = Intent("/")
-             val componentName = ComponentName("com.android.settings", "com.android.settings.WirelessSettings")
-             intent.component = componentName
-             intent.action = "android.intent.action.VIEW"
-             activity.startActivityForResult(intent, 0)
-         }*/
     }
 
 }

@@ -23,7 +23,16 @@
       <entries />
     </TableToJsonHistory>
     <TableSortHistory>
-      <entries />
+      <entries>
+        <TableSortHistoryEntry name="" sortNumericSuffix="true">
+          <columns>
+            <TableSortColumn index="0" isIncluded="true" isDescending="false" isNumeric="false" isNumericLast="false" headerText="" />
+          </columns>
+          <usedInFiles>
+            <option name="README.md" />
+          </usedInFiles>
+        </TableSortHistoryEntry>
+      </entries>
     </TableSortHistory>
   </component>
 </project>
