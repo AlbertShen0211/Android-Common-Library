@@ -1,7 +1,8 @@
+## 描述
 &emsp;<font color=#0000FF
 size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节省代码的读写时间，这样您就可以将更多精力放在要为用户构建的内容上。</font>
 
-&emsp;<font face="黑体" size=6>**一行代码即可引入到您的工程使用：**</font>
+## 一行代码即可引入到您的工程使用
 
 
 &emsp;&emsp;&emsp;&emsp;<font color=#FF0000 size=5>implementation
@@ -9,7 +10,7 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;或者  
 &emsp;&emsp;&emsp;&emsp;api 'com.spb:commonlibrary:1.0.0'</font>
 
-**常用方法介绍：**</font>
+## 常用方法介绍
 
 
 **1. toast 用法**
@@ -89,7 +90,7 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
      			   
     3). Date类型格式化成指定格式的String类型   currentDate
 
-    4).Long类型格式化成指定格式的String类型的日期 format2String(params) , format2DateString() 
+    4). Long类型格式化成指定格式的String类型的日期 format2String(params) , format2DateString() 
   
     5). 解析String类型的日期为Long类型 parseDateString2Mills(params)
   
@@ -105,7 +106,7 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
 
     11). 将日期时间设置为0点   ofTimeZero()
   
-    12).获取星期的下标  dayOfWeek()/dayOfWeek
+    12). 获取星期的下标  dayOfWeek()/dayOfWeek
 
 **10. Keyboard 用法**
 
@@ -113,3 +114,21 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
 
     2). 关闭键盘 hideSoftInput()
 
+
+
+
+
+
+## License
+
+Android Control Extension library for Android Copyright (c) 2020
+AlbertShen
+
+Licensed under the Apache License, Version 2.0 (the "License");
+
+you may not use this file except in compliance with the License.
+
+
+
+
+You may obtain a copy of the License at  http://www.apache.org/licenses/LICENSE-2.0
