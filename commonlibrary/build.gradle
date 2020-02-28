@@ -48,7 +48,7 @@ def libName = "AndroidCommonLibrary"
 
 group = "com.spb"
 // 版本号，下次更新是只需要更改版本号即可
-version = "1.0.0"
+version = "1.0.1"
 
 task generateSourcesJar(type: Jar) {
     group = 'jar'
@@ -101,12 +101,6 @@ artifacts {
     archives generateJavadoc //javadocJar
     archives generateSourcesJar //sourcesJar
 }
-/*
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-*/
 
 // 配置maven库，生成POM.xml文件
 install {
@@ -167,7 +161,6 @@ bintray {
 
 javadoc {
     options{
-        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
         encoding "UTF-8"
         charSet 'UTF-8'
         author true
