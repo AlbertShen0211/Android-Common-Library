@@ -3,10 +3,7 @@ package com.android.controlextension
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateUtils
-import com.android.generalextensionlibrary.ext.start
-import com.android.generalextensionlibrary.ext.longToast
-import com.android.generalextensionlibrary.ext.toast
-import com.android.generalextensionlibrary.ext.click
+import com.android.generalextensionlibrary.ext.*
 import com.android.generalextensionlibrary.util.*
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber

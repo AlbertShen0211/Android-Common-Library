@@ -1,4 +1,4 @@
-package com.android.generalextensionlibrary
+package com.android.generalextensionlibrary.ext
 
 import android.annotation.SuppressLint
 import android.content.Context

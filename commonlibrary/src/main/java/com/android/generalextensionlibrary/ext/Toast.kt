@@ -14,7 +14,6 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import com.android.generalextensionlibrary.appCtx
 import kotlin.LazyThreadSafetyMode.NONE
 
 inline fun Context.txt(@StringRes stringResId: Int): CharSequence = resources.getText(stringResId)
@@ -70,11 +69,11 @@ internal inline val Fragment.ctx: Context
 private class SafeToastCtx(ctx: Context) : ContextWrapper(ctx) {
     private val toastWindowManager by lazy(NONE) {
         ToastWindowManager(
-            baseContext.windowManager
+            com.android.generalextensionlibrary.ext.systemservices.windowManager
         )
     }
     private val toastLayoutInflater by lazy(NONE) {
-        baseContext.layoutInflater.cloneInContext(this)
+       layoutInflater.cloneInContext(this)
     }
 
     override fun getApplicationContext(): Context =

@@ -106,3 +106,10 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
     11). 将日期时间设置为0点   ofTimeZero()
   
     12).获取星期的下标  dayOfWeek()/dayOfWeek
+
+**10. Keyboard 用法**
+
+    1). 打开键盘 showSoftInput()
+
+    2). 关闭键盘 hideSoftInput()
+
