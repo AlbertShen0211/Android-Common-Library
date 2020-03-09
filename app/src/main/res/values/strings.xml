@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android Control Extension</string>
+    <string name="rationale_store">Apply write permission</string>
 </resources>
