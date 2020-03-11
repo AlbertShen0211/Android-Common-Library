@@ -6,9 +6,9 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
 
 
 &emsp;&emsp;&emsp;&emsp;<font color=#FF0000 size=5>implementation
-'com.spb:commonlibrary:1.0.1'  
+'com.spb:commonlibrary:1.0.2'  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;或者  
-&emsp;&emsp;&emsp;&emsp;api 'com.spb:commonlibrary:1.0.1'</font>
+&emsp;&emsp;&emsp;&emsp;api 'com.spb:commonlibrary:1.0.2'</font>
 
 ## 常用方法介绍
 
