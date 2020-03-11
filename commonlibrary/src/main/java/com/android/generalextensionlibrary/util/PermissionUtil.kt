@@ -47,4 +47,19 @@ object PermissionUtil {
     }
 
 
+     fun installIntent(context: Context, filePath: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        // setFlags() must be placed before addFlags(), otherwise it will be overwritten
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        PermissionUtil.setIntentDataAndType(
+            context,
+            intent, "application/vnd.android.package-archive", File(filePath), true
+        )
+        try {
+            context.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            e.printStackTrace()
+        }
+    }
+
 }

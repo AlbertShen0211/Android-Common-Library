@@ -118,7 +118,7 @@ size=5>使用这个commonlibrary、减少您必须编写的代码量，从而节
 
     1). android 7.0 文件权限 setIntentDataAndType() 
 
-    2). android 8.0 安装未知源权限 installPermissionSettingIntent()
+    2). android 8.0 安装未知源权限 installIntent()
 
 
 

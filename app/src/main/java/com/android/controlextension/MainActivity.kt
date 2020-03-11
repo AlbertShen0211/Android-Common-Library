@@ -18,6 +18,7 @@ import com.android.generalextensionlibrary.ext.longToast
 import com.android.generalextensionlibrary.ext.start
 import com.android.generalextensionlibrary.ext.toast
 import com.android.generalextensionlibrary.util.*
+import com.android.generalextensionlibrary.util.PermissionUtil.installIntent
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
@@ -26,8 +27,9 @@ import java.io.File
 import java.util.*
 
 private const val RC_WRITE_PERM = 10
+
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
-    val path= Environment.getExternalStorageDirectory().getPath()+"/test/app-release.apk"
+    val path = Environment.getExternalStorageDirectory().getPath() + "/test/app-release.apk"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -74,48 +76,31 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     @AfterPermissionGranted(RC_WRITE_PERM)
     private fun installApp(context: Context, filePath: String) {
-        if (hasStoragePermission()){
+        if (hasStoragePermission()) {
             val haveInstallPermission: Boolean
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 haveInstallPermission = packageManager.canRequestPackageInstalls()
                 if (!haveInstallPermission) {
-                        installPermissionSettingIntent()
-                }
-                else{
+                    installPermissionSettingIntent()
+                } else {
                     installIntent(context, filePath)
                 }
-            }
-            else{
+            } else {
                 installIntent(context, filePath)
             }
 
 
-        }
-        else{
-            Toast.makeText(this,"No permission",Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this, "No permission", Toast.LENGTH_LONG).show()
             EasyPermissions.requestPermissions(
                 this,
                 getString(R.string.rationale_store),
-              RC_WRITE_PERM,
+                RC_WRITE_PERM,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             )
         }
     }
 
-    private fun installIntent(context: Context, filePath: String) {
-        val intent = Intent(Intent.ACTION_VIEW)
-        // setFlags() must be placed before addFlags(), otherwise it will be overwritten
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        PermissionUtil.setIntentDataAndType(
-            context,
-            intent, "application/vnd.android.package-archive", File(filePath), true
-        )
-        try {
-            context.startActivity(intent)
-        } catch (e: ActivityNotFoundException) {
-            e.printStackTrace()
-        }
-    }
 
     /**
      * 开启安装未知来源权限
