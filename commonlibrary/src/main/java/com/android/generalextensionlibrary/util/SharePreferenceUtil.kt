@@ -8,9 +8,10 @@ import java.io.*
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class SharePreferenceUtil<T>(val name: String, private val default: T) : ReadWriteProperty<Any?, T> {
+class SharePreferenceUtil<T>(val name: String, private val default: T,val fileName:String="default") : ReadWriteProperty<Any?, T> {
+
     private val prefs: SharedPreferences by lazy {
-         appCtx.getSharedPreferences("default",Context.MODE_PRIVATE)
+         appCtx.getSharedPreferences(fileName,Context.MODE_PRIVATE)
     }
 
     override fun getValue(thisRef: Any?, property: KProperty<*>): T {
@@ -21,7 +22,7 @@ class SharePreferenceUtil<T>(val name: String, private val default: T) : ReadWri
         putValue(name, value)
     }
 
-    @SuppressLint("CommitPrefEdits")
+
     private fun <T> putValue(name: String, value: T) = with(prefs.edit()) {
         when (value) {
             is Long -> putLong(name, value)
@@ -30,10 +31,10 @@ class SharePreferenceUtil<T>(val name: String, private val default: T) : ReadWri
             is Boolean -> putBoolean(name, value)
             is Float -> putFloat(name, value)
             else -> putString(name, serialize(value))
-        }.apply()
+        }. apply()
     }
 
-    @Suppress("UNCHECKED_CAST")
+
     fun <T> getValue(name: String, default: T): T = with(prefs) {
         val res: Any = when (default) {
             is Long -> getLong(name, default)
